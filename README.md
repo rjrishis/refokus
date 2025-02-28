@@ -18,9 +18,11 @@ Welcome to the Refokus website clone project! This project aims to replicate the
 - **GSAP**: GreenSock Animation Platform for creating animations.
 - **Shery.js**: JavaScript library for creating scroll animations.
 
-## Preview
+## Screenshots
 
 ![Refokus Website Clone Preview](images/preview.png)
+![Refokus Website Clone Preview-1](images/preview-1.png)
+![Refokus Website Clone Preview-2](images/preview-2.png)
 
 ## Live Website
 
