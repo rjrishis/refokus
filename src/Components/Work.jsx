@@ -1,53 +1,51 @@
-import React from "react";
-import { useState } from "react";
-import { useScroll } from "framer-motion";
+import React, { useState } from "react";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 
-const Work = () => {
-  const [image,setImage]=useState([
+function Work() {
+  const [images, setImages] = useState([
     {
-      url: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dGVjaG5vbG9neXxlbnwwfHwwfHx8MA%3D%3D",
+      url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/634ef09178195ce0073e38f3_Refokus%20Tools-1.png",
       top: "50%",
       left: "50%",
-      isAcitve: false,
+      isActive: false,
     },
     {
-      url: "https://plus.unsplash.com/premium_photo-1666901328578-7fcbe821735e?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/634ef0accfe1b3e66bc55462_Refokus%20Tools.png",
       top: "56%",
       left: "44%",
-      isAcitve: false,
+      isActive: false,
     },
     {
-      url: "https://images.unsplash.com/photo-1553152531-b98a2fc8d3bf?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/634ef0acbc45cb2f4fc5c6b2_Yahoo.png",
       top: "45%",
       left: "56%",
-      isAcitve: false,
+      isActive: false,
     },
     {
-      url: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/634ef092455ce2cf591e52d1_Rainfall.png",
       top: "60%",
       left: "53%",
-      isAcitve: false,
+      isActive: false,
     },
     {
-      url: "https://images.unsplash.com/photo-1503437313881-503a91226402?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/634ef0ac7e7179d210dc41f0_Summon.png",
       top: "43%",
       left: "40%",
-      isAcitve: false,
+      isActive: false,
     },
     {
-      url: "https://plus.unsplash.com/premium_photo-1661727547850-3d7c020a64a8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/634ef0af108a465002975acd_Showcase%20Websites%20(1).png",
       top: "65%",
       left: "55%",
-      isAcitve: false,
+      isActive: false,
     },
-  ])
+  ]);
 
   const { scrollYProgress } = useScroll();
 
   scrollYProgress.on("change", (data) => {
-    console.log(Math.floor(data*100));
     function imagesShow(arr) {
-      setImage((prev) =>
+      setImages((prev) =>
         prev.map((item, index) =>
           arr.indexOf(index) === -1
             ? { ...item, isActive: false }
@@ -55,8 +53,9 @@ const Work = () => {
         )
       );
     }
-
-    switch (Math.floor(data * 100)) {
+    switch (
+      Math.floor(data * 100) //the *100 is to make it percent
+    ) {
       case 0:
         imagesShow([]);
         break;
@@ -65,40 +64,38 @@ const Work = () => {
         break;
       case 2:
         imagesShow([0, 1]);
-        break; // Add break statement here
+        break;
       case 3:
         imagesShow([0, 1, 2]);
-        break; // Add break statement here
+        break;
       case 4:
         imagesShow([0, 1, 2, 3]);
-        break; // Add break statement here
-      case 5:
-        imagesShow([0, 1, 2, 3, 4]);
-        break; // Add break statement here
+        break;
       case 6:
+        imagesShow([0, 1, 2, 3, 4]);
+        break;
+      case 8:
         imagesShow([0, 1, 2, 3, 4, 5]);
-        break; // Add break statement here
-      // default:
-      //   imagesShow([]);
+        break;
     }
   });
 
   return (
-    <div className="w-full mt-5">
-      <div className="relative max-w-screen-xl mx-auto text-center">
-        <h1 className="text-[25vw] leading-none font-medium tracking-tighter select-none text-white">
+    <div className="w-full mt-10">
+      <div className="relative max-w-screen-xl mx-auto text-center ">
+        <h1 className="text-[40vw] leading-none font-medium select-none">
           work
         </h1>
-        <div className="absolute top-[40%] left-[45%] w-full h-full -translate-x-[50%] -translate-y-[50%]">
-          {image.map(
+        <div className="absolute top-0 w-full h-full">
+          {images.map(
             (elem, index) =>
               elem.isActive && (
                 <img
                   key={index}
-                  className="absolute w-44 h-44"
+                  className="absolute w-60 rounded-lg -translate-x-[50%] -translate-y-[50%]"
                   style={{ top: elem.top, left: elem.left }}
                   src={elem.url}
-                  alt=""
+                  alt="work_images"
                 />
               )
           )}
@@ -106,6 +103,6 @@ const Work = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Work;

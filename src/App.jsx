@@ -1,26 +1,28 @@
-import React from 'react'
-import Nav from './Components/Nav'
-import Work from './Components/Work'
-import Stripes from './Components/Stripes'
-import Products from './Components/Products'
-import Marquees from './Components/Marquees'
-import Cards from './Components/Cards'
-import Footer from './Components/Footer'
-import LocomotiveScroll from 'locomotive-scroll';
+import React from "react";
+import Navbar from "./components/Navbar";
+import Work from "./components/Work";
+import Stripes from "./components/Stripes";
+import Products from "./components/Products";
+import Marquees from "./components/Marquees";
+import Cards from "./components/Cards";
+import Footer from "./components/Footer";
+import LocomotiveScroll from "locomotive-scroll";
+import './App.css'
 
 function App() {
-const locomotiveScroll = new LocomotiveScroll();
+  const locomotiveScroll = new LocomotiveScroll();
+
   return (
-    <div className='w-full  bg-zinc-900 font-["satoshi"]'>
-      <Nav/>
-      <Work/>
-      <Stripes/>
-      <Products/>
-      <Marquees/>
-      <Cards/>
-      <Footer/>
+    <div className=" max-w-screen-2xl bg-zinc-900 text-white font-['satoshi']">
+      <Navbar />
+      <Work />
+      <Stripes />
+      <Products />
+      <Marquees />
+      <Cards />
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
