@@ -20,7 +20,7 @@ Welcome to the Refokus website clone project! This project aims to replicate the
 
 ## Preview
 
-![Refokus Website Clone Preview](/public/preview.png)
+![Refokus Website Clone Preview](images/preview.png)
 
 ## Live Website
 
