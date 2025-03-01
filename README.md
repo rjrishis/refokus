@@ -2,6 +2,10 @@
 
 Welcome to the Refokus website clone project! This project aims to replicate the design and functionality of the Refokus website using HTML, CSS, and JavaScript. Additionally, it utilizes Locomotive Scroll and GSAP for smooth scrolling effects, and Shery.js for animations.
 
+## Live Website
+
+Explore Refokus-Clone live: [Refokus-Clone Live](https://refokus-sable.vercel.app/)
+
 ## Features
 
 - **Replicated Design**: Recreate the design and layout of the Refokus website.
@@ -23,10 +27,6 @@ Welcome to the Refokus website clone project! This project aims to replicate the
 ![Refokus Website Clone Preview](images/preview.png)
 ![Refokus Website Clone Preview-1](images/preview-1.png)
 ![Refokus Website Clone Preview-2](images/preview-2.png)
-
-## Live Website
-
-Explore Refokus-Clone live: [Refokus-Clone Live](https://antra77.github.io/Refokus-Clone/)
 
 ## Getting Started
 
