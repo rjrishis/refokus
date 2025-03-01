@@ -1,132 +1,81 @@
-import React, { useState } from "react";
+import React from "react";
 import Product from "./Product";
 import { motion } from "framer-motion";
-import arqitel from "../assets/arqitel.mp4";
-import ttr from "../assets/ttr.mp4";
-import yir from "../assets/yir.mp4";
-import yahoo from "../assets/yahoo.mp4";
-import rainfall from "../assets/rainfall.mp4";
-
+import { useState } from "react";
 function Products() {
-  var products = [
+  const [pos, setPos] = useState(0);
+  const mover = (value) => {
+    setPos(value * 23);
+  };
+  let d = [
     {
       title: "Arqitel",
       description:
-        "With a continuous 3D animation, we showcase Arqitel approach and show how migration data translates into real estate.",
+        "hello dear how are you iam fine and kendi hundi si chan tak raah bana de taare ne pasnd menu ek taah dawa de",
       live: true,
       case: false,
     },
     {
       title: "TTR",
       description:
-        "We've created an interactive site using generative AI to allow users to engage with our thinking about Ai, industry trends and design.",
+        "hello dear how are you iam fine and kendi hundi si chan tak raah bana de taare ne pasnd menu ek taah dawa de",
       live: true,
       case: false,
     },
     {
       title: "YIR 2022",
       description:
-        "Our second year was filled with great events, exciting projects, awards and amazing people - so we made another showcase to celebrate.",
+        "hello dear how are you iam fine and kendi hundi si chan tak raah bana de taare ne pasnd menu ek taah dawa de",
       live: true,
-      case: false,
+      case: true,
     },
     {
       title: "Yahoo!",
       description:
-        "We enhanced the New York Fashion Week, by creating a fully digital AR fashion experience for Yahoo and Maisie Wilen, featuring holographic 3D models and an integrated web shop.",
-      live: true,
-      case: true,
-    },
-    {
-      title: "Rainfall",
-      description:
-        "We crafted a website for Rainfall Ventures, developing prototypes and custom code that ultimately allows their team to update content regularly and with ease.",
+        "hello dear how are you iam fine and kendi hundi si chan tak raah bana de taare ne pasnd menu ek taah dawa de",
       live: true,
       case: true,
     },
   ];
-
-  const [pos, setPos] = useState(0);
-  const mover = (val) => {
-    setPos(val * 23);
-  };
-
   return (
     <div className="mt-32 relative">
-      {products.map((val, index) => (
-        <Product key={index} val={val} mover={mover} count={index} />
+      {d.map((e, i) => (
+        <Product key={i} val={e} mover={mover} count={i} />
       ))}
-      <div className="absolute top-0 w-full h-full pointer-events-none">
+      <div className="w-full h-full absolute top-0 pointer-events-none">
         <motion.div
-          initial={{ y: pos, x: "-50%" }}
+          initial={{ y: pos }}
           animate={{ y: pos + `rem` }}
-          transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.6 }}
-          className="window absolute w-[32rem] h-[23rem] left-[44%] rounded-3xl overflow-hidden"
+          transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+          className="window rounded-lg absolute w-[32rem] h-[23rem]  left-[25%] overflow-hidden"
         >
           <motion.div
             animate={{ y: -pos + `rem` }}
             transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
-            className="w-full h-full"
+            className="w-full h-full bg-blue-100"
           >
-            <video
-              className="absolute object-cover rounded-3xl"
-              autoPlay
-              muted
-              loop
-              src={arqitel}
-            ></video>
+            <img className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1540655037529-dec987208707?q=80&w=1842&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
           </motion.div>
           <motion.div
             animate={{ y: -pos + `rem` }}
             transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
-            className="w-full h-full"
+            className="w-full h-full bg-green-100"
           >
-            <video
-              className="absolute object-cover rounded-3xl"
-              autoPlay
-              muted
-              loop
-              src={ttr}
-            ></video>
+            <img className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
           </motion.div>
           <motion.div
             animate={{ y: -pos + `rem` }}
             transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
-            className="w-full h-full"
+            className="w-full h-full bg-purple-100"
           >
-            <video
-              className="absolute object-cover rounded-3xl"
-              autoPlay
-              muted
-              loop
-              src={yir}
-            ></video>
+            <img className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1642873744568-a7c5f7d10aae?q=80&w=1951&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
           </motion.div>
           <motion.div
             animate={{ y: -pos + `rem` }}
             transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
-            className="w-full h-full"
+            className="w-full h-full bg-red-100"
           >
-            <video
-              className="absolute object-cover rounded-3xl"
-              autoPlay
-              muted
-              loop
-              src={yahoo}
-            ></video>
-          </motion.div>
-          <motion.div
-            animate={{ y: -pos + `rem` }}
-            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
-            className="w-full h-full"
-          >
-            <video
-              className="absolute object-cover rounded-3xl"
-              autoPlay
-              muted
-              loop
-              src={rainfall}
-            ></video>
+            <img className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1638136264464-2711f0078d1e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
           </motion.div>
         </motion.div>
       </div>

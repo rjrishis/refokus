@@ -1,14 +1,14 @@
-/* eslint-disable react/prop-types */
-import React from "react";
-import { MdSubdirectoryArrowRight } from "react-icons/md";
-
-function Button({ title="Get Started" }) {
+import React from 'react'
+import { BsArrowReturnRight } from "react-icons/bs";
+function Button({title="Get Started"}) {
   return (
-    <div className="w-40 px-4 py-2 bg-zinc-100 text-black rounded-full flex items-center justify-between">
-      <span className="text-sm font-thin">{title}</span>
-      <MdSubdirectoryArrowRight />
+    <div className=''>
+        <button className='w-36 h-8 px-3 py-2 text-sm bg-zinc-100 text-black font-medium rounded-full flex items-center justify-between'>{title}
+        <BsArrowReturnRight/>
+        
+        </button>
     </div>
-  );
+  )
 }
 
-export default Button;
+export default Button
